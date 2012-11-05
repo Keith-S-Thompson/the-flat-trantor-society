@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for file in *.md ; do
+    target=$(basename $file .md).html
+    if [ "$file" -nt "$target" ] ; then
+        echo "$file --> $target"
+        markdown $file > $target
+    fi
+done
