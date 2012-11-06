@@ -1,5 +1,12 @@
 #!/bin/bash
 
+now=$(date +'%a %Y-%m-%d %T %Z')
+
+updated() {
+    printf "\n*Last updated %s*\n" "$now"
+}
+
+
 for file in *.md ; do
     if [ $file = README.md ] ; then
         # Don't need README.html
@@ -8,7 +15,7 @@ for file in *.md ; do
         target=$(basename $file .md).html
         if [ "$file" -nt "$target" ] ; then
             echo "$file --> $target"
-            markdown $file > $target
+            (cat $file ; updated ) | markdown > $target
         fi
     fi
 done
