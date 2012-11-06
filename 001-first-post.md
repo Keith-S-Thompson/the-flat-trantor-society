@@ -8,7 +8,3 @@ musings on software development, programming language standards,
 and whatever else strikes my fancy at the moment.
 
 Welcome.
-
-[I've decided "The Flat [Trantor](http://en.wikipedia.org/wiki/Trantor)
-Society" is a cooler name.  I'll post some actual content Real
-Soon Now.]
