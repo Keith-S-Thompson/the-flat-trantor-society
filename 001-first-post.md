@@ -1,5 +1,5 @@
-[First post](http://the-flat-trantor-society.blogspot.com/2012/01/first-post.html)
-===
+<!-- Title: First post -->
+<!-- URL:   http://the-flat-trantor-society.blogspot.com/2012/01/first-post.html -->
 
 Greetings to my vast army of followers.
 

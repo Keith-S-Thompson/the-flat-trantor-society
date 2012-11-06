@@ -1,5 +1,5 @@
-[No, strncpy() is not a "safer" strcpy()](http://the-flat-trantor-society.blogspot.com/2012/03/no-strncpy-is-not-safer-strcpy.html)
-===
+<!-- Title: No, strncpy() is not a "safer" strcpy() -->
+<!-- URL:   http://the-flat-trantor-society.blogspot.com/2012/03/no-strncpy-is-not-safer-strcpy.html -->
 
 The C standard library declares a number of string functions in the
 standard header `<string.h>`.
