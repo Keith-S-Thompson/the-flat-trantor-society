@@ -1,5 +1,5 @@
 <!-- Title: Markdown -->
-<!-- URL: http://the-flat-trantor-society.blogspot.com/2012/11/markdown.html -->
+<!-- URL:   http://the-flat-trantor-society.blogspot.com/2012/11/markdown.html -->
 
 I've decided to start composing and maintaining this blog using
 [Markdown](http://daringfireball.net/projects/markdown/).
