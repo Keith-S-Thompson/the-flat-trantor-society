@@ -34,7 +34,7 @@ isn't a string.  The strncmp() function is a bit safer; it requires
 a third argument that specifies the maximum number of characters to
 examine in each array:
 
-- `int strcmp (const char *s1, const char *s2);
+- `int strcmp (const char *s1, const char *s2);`
 - `int strncmp(const char *s1, const char *s2, size_t n);`
 
 Which brings us (finally!) to the topic of this article: the
@@ -43,7 +43,9 @@ Which brings us (finally!) to the topic of this article: the
 `strcpy()` is a fairly straightforward string function.  Given two
 pointers, it copies the string pointed to by the second pointer into
 the array pointed to by first.  (The order of the arguments mimics
-the order of the operands in an assignment statement.)
+the order of the operands in an assignment statement.)  It's up to
+the caller to ensure that there's enough room in the target array to
+hold the copied contents.
 
 So you'd *think* that `strncpy()` would be a "safer" version of
 `strcpy()`.  And given their respective declarations, that's exactly
@@ -101,8 +103,9 @@ The description of the `strcpy()` and `strncpy()` functions is
 identical in the 1990, 1999, and 2011 versions of the ISO C standard --
 except that C99 and C11 add a footnote to the `strncpy()` description:
 
-> Thus, if there is no null character in the firstncharacters of the
-> array pointed to bys2, the result will not be null-terminated.
+> Thus, if there is no null character in the first **n** characters
+> of the array pointed to by **s2**, the result will not be
+> null-terminated.
 
 The bottom line is this: in spite of its frankly misleading name,
 `strncpy()` isn't really a string function.
@@ -112,9 +115,9 @@ a bad thing in itself.  It's designed to deal with a specialized
 data structure, a fixed-size character array of **N** characters
 that can contain up to **N** characters of actual data, with the
 rest of the array (if any) padded with 0 or more null characters.
-Early Unix systems used such a structure to hold file names, for
-example (though it's not clear that `strncpy()` was invented for that
-specific purpose).
+Early Unix systems used such a structure to hold file names in
+directories, for example (though it's not clear that `strncpy()`
+was invented for that specific purpose).
 
 The problem is that the name `strncpy()` strongly implies that it's a
 "safer" version of `strcpy()`.  It isn't.
