@@ -10,7 +10,7 @@ converted them to Markdown format.  For any future posts, I'll first
 compose them as Markdown, then copy-and-paste the generated HTML
 into blogspot.
 
-Future posts (once I get around to writing them):
+Future posts (once I obtain the proverbial Round Tuit):
 
 - Where should the Control key be located?  Almost all modern computer
   keyboards put the Caps Lock key directly to the left of the 'A'
@@ -24,3 +24,5 @@ Future posts (once I get around to writing them):
   over time, though all of them differ from the original meaning.
   (The wording in the 2011 standard is based on a suggestion I made
   in comp.std.c.)
+- Shell commands: `echo` vs. `printf`.
+- `#!/usr/bin/foo` vs. `#!/usr/bin/env foo`
