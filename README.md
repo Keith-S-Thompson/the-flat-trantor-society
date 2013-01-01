@@ -3,7 +3,8 @@ Trantor Society](http://the-flat-trantor-society.blogspot.com/).
 
 I initially composed the articles using blogspot's own
 tools, which don't (as far as I can tell) allow for using
-[Markdown](http://daringfireball.net/projects/markdown/).
+[Markdown](http://daringfireball.net/projects/markdown/), and make
+code formatting particularly difficult.
 
 I've now copied the contents of the first two posts and manually
 converted them to Markdown format.  For any future posts, I'll first
@@ -26,3 +27,4 @@ Future posts (once I obtain the proverbial Round Tuit):
   in comp.std.c.)
 - Shell commands: `echo` vs. `printf`.
 - `#!/usr/bin/foo` vs. `#!/usr/bin/env foo`
+- `crontab -e` considered harmful
