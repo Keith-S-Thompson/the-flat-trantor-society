@@ -28,3 +28,4 @@ Future posts (once I obtain the proverbial Round Tuit):
 - Shell commands: `echo` vs. `printf`.
 - `#!/usr/bin/foo` vs. `#!/usr/bin/env foo`
 - `crontab -e` considered harmful
+- Google Groups considered harmful
