@@ -29,3 +29,5 @@ Future posts (once I obtain the proverbial Round Tuit):
 - `#!/usr/bin/foo` vs. `#!/usr/bin/env foo`
 - `crontab -e` considered harmful
 - Google Groups considered harmful
+- `void main()` is useful for detecting bad C textbooks (should I
+  resist the temptation to mention "shibboleth"?
