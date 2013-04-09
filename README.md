@@ -31,3 +31,8 @@ Future posts (once I obtain the proverbial Round Tuit):
 - Google Groups considered harmful
 - `void main()` is useful for detecting bad C textbooks (should I
   resist the temptation to mention "shibboleth"?
+- Multidimensional arrays in C. Array of array vs. pointer to array
+  vs. array of pointers vs. pointer to pointer -- and more for higher
+  dimensions. Added flexibility (not having to specify sizes at compile
+  time, or definition time for VLAs) comes with added responsibility
+  (managing allocation and deallocation).
