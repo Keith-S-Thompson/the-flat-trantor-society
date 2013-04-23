@@ -11,7 +11,7 @@ converted them to Markdown format.  For any future posts, I'll first
 compose them as Markdown, then copy-and-paste the generated HTML
 into blogspot.
 
-Future posts (once I obtain the proverbial Round Tuit):
+Future posts (once I acquire the proverbial Round Tuit):
 
 - Where should the Control key be located?  Almost all modern computer
   keyboards put the Caps Lock key directly to the left of the 'A'
@@ -35,4 +35,5 @@ Future posts (once I obtain the proverbial Round Tuit):
   vs. array of pointers vs. pointer to pointer -- and more for higher
   dimensions. Added flexibility (not having to specify sizes at compile
   time, or definition time for VLAs) comes with added responsibility
-  (managing allocation and deallocation).
+  (managing allocation and deallocation). Pictures with boxes and arrows.
+- C is more strongly typed than you think it is.
