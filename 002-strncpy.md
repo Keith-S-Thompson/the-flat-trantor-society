@@ -123,8 +123,9 @@ The problem is that the name `strncpy()` strongly implies that it's a
 "safer" version of `strcpy()`.  It isn't.
 
 Most of the other `strn*()` functions are safer versions of their
-unbounded counterparts; see, for example, `strcat()` vs. `strncat()`,
-and `strlen()` vs `strnlen()`.
+unbounded counterparts: `strcat()` vs. `strncat()` and `strcmp()`
+vs `strcmp()`.  [TODO: Discuss the bounds-checking versions added
+in Annex K of the 2011 ISO C standard).
 
 It's because `strncpy()`'s name implies something that it isn't that
 it's such a trap for the unwary. It's not a useless function, but I
