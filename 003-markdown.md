@@ -22,12 +22,15 @@ the articles, and how I've revised them over time.
 
 Markdown is converted to HTML by the
 [`markdown`](http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip)
-command, which is also available as a .deb package on Ubuntu:
-`sudo apt-get install markdown`.  It should be available for other
-systems as well.  I run a simple `gen-html` script (included in
-the GitHub project for this blog), and then manually copy-and-paste
-the generated HTML into blogspot.com's web interface.  The manual
-step is annoying, but overall it should make it easier to write
-and maintain this blog.
+command, which is also available as a .deb package on Debian and
+Debian-derived systems such as Ubuntu and Linux Mint:
+
+    sudo apt-get install markdown
+
+It should be available for other systems as well.  I run a simple
+`gen-html` script (included in the GitHub project for this blog), and
+then manually copy-and-paste the generated HTML into blogspot.com's
+web interface.  The manual step is annoying, but overall it should
+make it easier to write and maintain this blog.
 
 Who knows, I might even get around to posting more articles!
