@@ -37,3 +37,4 @@ Future posts (once I acquire the proverbial Round Tuit):
   time, or definition time for VLAs) comes with added responsibility
   (managing allocation and deallocation). Pictures with boxes and arrows.
 - C is more strongly typed than you think it is.
+- This is why people use Windows (a few things Linux should do better).
