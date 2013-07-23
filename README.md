@@ -38,3 +38,4 @@ Future posts (once I acquire the proverbial Round Tuit):
   (managing allocation and deallocation). Pictures with boxes and arrows.
 - C is more strongly typed than you think it is.
 - This is why people use Windows (a few things Linux should do better).
+- Floating-point equality: using a simple epsilon is not good enough.
