@@ -110,6 +110,10 @@ except that C99 and C11 add a footnote to the `strncpy()` description:
 The bottom line is this: in spite of its frankly misleading name,
 `strncpy()` isn't really a string function.
 
+[**TODO**: Discuss `dest[0]='\0'; strncat(dest, src, size);` as a
+better-behaved alternative, something that does what most people assume
+`strncpy()` does.]
+
 Now having a function like this in the standard library isn't such
 a bad thing in itself.  It's designed to deal with a specialized
 data structure, a fixed-size character array of **N** characters
@@ -124,7 +128,7 @@ The problem is that the name `strncpy()` strongly implies that it's a
 
 Most of the other `strn*()` functions are safer versions of their
 unbounded counterparts: `strcat()` vs. `strncat()` and `strcmp()`
-vs `strcmp()`.  [TODO: Discuss the bounds-checking versions added
+vs `strcmp()`.  [**TODO**: Discuss the bounds-checking versions added
 in Annex K of the 2011 ISO C standard).
 
 It's because `strncpy()`'s name implies something that it isn't that
