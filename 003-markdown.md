@@ -20,6 +20,13 @@ project](https://github.com/Keith-S-Thompson/the-flat-trantor-society).
 If you're sufficiently curious, you can see the Markdown form of all
 the articles, and how I've revised them over time.
 
+One thing I've noticed with the composition software used by
+blogspot.com is that switching between the "HTML" and "Compose" views
+*changes the HTML*; in particular, it removes `<p>` paragraph markup,
+replacing it by `<br />` line breaks.  Because of this I need to copy
+the Markdown-generated HTML into the HTML window and click the **Post**
+button *without* looking at the preview.  Annoying, but not fatal.
+
 Markdown is converted to HTML by the
 [`markdown`](http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip)
 command, which is also available as a .deb package on Debian and
