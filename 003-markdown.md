@@ -33,4 +33,10 @@ then manually copy-and-paste the generated HTML into blogspot.com's
 web interface.  The manual step is annoying, but overall it should
 make it easier to write and maintain this blog.
 
+[Pandoc](http://johnmacfarlane.net/pandoc/) is another good conversion
+tool, handles numerous other formats as well. It should be available
+for most systems.
+
 Who knows, I might even get around to posting more articles!
+
+*Last updated Sat 2013-12-28 16:23:03 PST*
