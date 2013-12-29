@@ -1,5 +1,5 @@
 <!-- Title: Where should the control key be? -->
-<!-- URL:   TBD -->
+<!-- URL:   http://the-flat-trantor-society.blogspot.com/2013/12/where-should-control-key-be.html -->
 
 Almost all modern computer keyboards place the Caps Lock key
 immediately to the left of **A**, with the Shift key below it (next
