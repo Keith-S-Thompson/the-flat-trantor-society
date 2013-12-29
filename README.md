@@ -13,7 +13,8 @@ into blogspot.
 
 Future posts (once I acquire the proverbial Round Tuit):
 
-- Where should the Control key be located?  Almost all modern computer
+- [**DONE**]
+  Where should the Control key be located?  Almost all modern computer
   keyboards put the Caps Lock key directly to the left of the 'A'
   key, with the Shift key below it and the Control key below Shift.
   I strongly prefer to have the Control key directly to the left of
