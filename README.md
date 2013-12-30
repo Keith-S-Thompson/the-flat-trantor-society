@@ -45,6 +45,7 @@ Future posts (once I acquire the proverbial Round Tuit):
   "free software" reasons; explain how to install it yourself (see
   `$INFOPATH`). And the documentation for the special parameters `$*
   $@ $# $? $- $$ $! $0 $_` is hard to find; provide my patch that
-  updates the document. References:
+  updates the document.<br>
+  References:
   - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=713923
   - http://stackoverflow.com/q/20272085/827263
