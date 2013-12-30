@@ -27,7 +27,9 @@ Future posts (once I acquire the proverbial Round Tuit):
   in comp.std.c.)
 - Shell commands: `echo` vs. `printf`.
 - `#!/usr/bin/foo` vs. `#!/usr/bin/env foo`
-- `crontab -e` considered harmful
+- `crontab -e` considered harmful; more generally, how to manage your
+  crontab. Don't be tempted to edit `/etc/crontab`; per-user crontabs
+  exist for a reason.
 - Google Groups considered harmful
 - `void main()` is useful for detecting bad C textbooks (should I
   resist the temptation to mention "shibboleth"?
