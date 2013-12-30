@@ -41,3 +41,10 @@ Future posts (once I acquire the proverbial Round Tuit):
 - C is more strongly typed than you think it is.
 - This is why people use Windows (a few things Linux should do better).
 - Floating-point equality: using a simple epsilon is not good enough.
+- Bash documentation. Debian doesn't include the bash-doc package for
+  "free software" reasons; explain how to install it yourself (see
+  `$INFOPATH`). And the documentation for the special parameters `$*
+  $@ $# $? $- $$ $! $0 $_` is hard to find; provide my patch that
+  updates the document. References:
+-- http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=713923
+-- http://stackoverflow.com/q/20272085/827263
