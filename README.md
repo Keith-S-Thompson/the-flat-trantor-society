@@ -13,7 +13,7 @@ into blogspot.
 
 Future posts (once I acquire the proverbial Round Tuit):
 
-- [**DONE**]
+- [[**DONE**]](http://the-flat-trantor-society.blogspot.com/2013/12/where-should-control-key-be.html)
   Where should the Control key be located?  Almost all modern computer
   keyboards put the Caps Lock key directly to the left of the 'A'
   key, with the Shift key below it and the Control key below Shift.
@@ -28,7 +28,9 @@ Future posts (once I acquire the proverbial Round Tuit):
   in comp.std.c.)
 - Shell commands: `echo` vs. `printf`.
 - `#!/usr/bin/foo` vs. `#!/usr/bin/env foo`
-- `crontab -e` considered harmful
+- `crontab -e` considered harmful; more generally, how to manage your
+  crontab. Don't be tempted to edit `/etc/crontab`; per-user crontabs
+  exist for a reason.
 - Google Groups considered harmful
 - `void main()` is useful for detecting bad C textbooks (should I
   resist the temptation to mention "shibboleth"?
@@ -40,3 +42,11 @@ Future posts (once I acquire the proverbial Round Tuit):
 - C is more strongly typed than you think it is.
 - This is why people use Windows (a few things Linux should do better).
 - Floating-point equality: using a simple epsilon is not good enough.
+- Bash documentation. Debian doesn't include the bash-doc package for
+  "free software" reasons; explain how to install it yourself (see
+  `$INFOPATH`). And the documentation for the special parameters `$*
+  $@ $# $? $- $$ $! $0 $_` is hard to find; provide my patch that
+  updates the document.<br>
+  References:
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=713923
+  - http://stackoverflow.com/q/20272085/827263
