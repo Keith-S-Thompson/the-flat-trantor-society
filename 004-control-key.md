@@ -8,7 +8,7 @@ to **Z**) and the Control key below that, in the lower left corner.
 It wasn't always this way.
 
 For example, many of Sun's keyboards ([images
-here](http://xahlee.info/kbd/sun_microsystems_keyboard.html) put the
+here](http://xahlee.info/kbd/sun_microsystems_keyboard.html)) put the
 Control key immediately to the left of **A**, and the Caps Lock key
 in the lower left corner.
 
@@ -30,7 +30,7 @@ Fortunately, there are ways to remap your keyboard in software so that
 the key labeled "Caps Lock" acts as a Control key.  Unfortunately,
 those ways vary considerably from one operating system to another.
 
-- Microsoft Windows:
+- **Microsoft Windows**:
 
   Microsoft Windows does let you do some limited keyboard remapping
   through the Control Panel (in Windows 7 at least, it's under "Region
@@ -46,22 +46,35 @@ those ways vary considerably from one operating system to another.
   this registry patch to a shared Windows system unless you're sure that
   all users of the system are ok with a "non-standard" keyboard layout.
 
-- Linux:
-
-  (or GNU/Linux if you prefer)
+- **Linux** (or GNU/Linux if you prefer):
 
   Fortunately, Linux-based systems generally *do* let you modify keyboard
   layouts on a per-user basis.  The specific method can vary depending on
   which distribution and desktop environment you use.  I'm running Linux
   Mint 14 on my home system; other Linux-based systems should be similar.
 
-  From the "System Tools" menu, select "System Settings", then
-  open "Keyboard Layout".  Select the "Layouts" tab, then click the
-  "Options..."  button.  Open "Caps Lock key behavior" and select the
-  option you prefer.  I use "Make Caps Lock an additional Control but
-  keep the Caps_Lock keysym", which makes both Caps Lock and Control
-  act as a Control key.
+  **Linux Mint 14**:
 
-- MacOS:
+    - From the "System Tools" menu, select "System Settings", then
+      open "Keyboard Layout"
+    - Select the "Layouts" tab
+    - Click the "Options..."  button.
+    - Open "Caps Lock key behavior" and select the
+      option you prefer.  I use "Make Caps Lock an additional Control but
+      keep the Caps_Lock keysym", which makes both Caps Lock and Control
+      act as a Control key.
+
+  **Debian 6**:
+
+    - "System" > "Preferences" > "Keyboard"
+    - Select the "Layouts" tab
+    - Highlight the layout you use (mine is "USA")
+    - Click the "Options" button
+    - Under "Ctrl key position", select "Make CapsLock an additional
+      Ctrl", or whichever option you prefer.
+
+- **MacOSX**:
 
   I'll add instructions for MacOS later.
+
+*Last updated Mon 2013-12-30 17:04:43 PST*
