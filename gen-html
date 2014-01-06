@@ -1,25 +1,19 @@
 #!/bin/bash
 
 # TODO: 
-# - Get the timestamp from the git log of the .md file
-# - Make this script apply to a single .md file; put the other logic
-#   in a Makefile
-
-now=$(date +'%a %Y-%m-%d %T %Z')
+# - Make this script apply to a single .md file; put the other
+#   logic in a Makefile
 
 updated() {
-    printf "\n*Last updated %s*\n" "$now"
+    file="$1"
+    timestamp="$(git log -n 1 $file  | sed -n '/^Date: */s///p')"
+    printf "\n*Last updated %s*\n" "$timestamp"
 }
 
-for file in *.md ; do
-    if [ $file = README.md ] ; then
-        # Don't need README.html
-        echo "Skipping README.md"
-    else
-        target=$(basename $file .md).html
-        if [ "$file" -nt "$target" ] ; then
-            echo "$file --> $target"
-            (cat $file ; updated ) | markdown > $target
-        fi
+for file in [0-9]*.md ; do
+    target=$(basename $file .md).html
+    if [ "$file" -nt "$target" ] ; then
+        echo "$file --> $target"
+        (cat $file ; updated $file ) | markdown > $target
     fi
 done
