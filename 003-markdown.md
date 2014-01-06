@@ -46,5 +46,3 @@ tool, handles numerous other formats as well. It should be available
 for most systems.
 
 Who knows, I might even get around to posting more articles!
-
-*Last updated Sat 2013-12-28 16:29:29 PST*

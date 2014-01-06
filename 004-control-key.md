@@ -80,5 +80,3 @@ those ways vary considerably from one operating system to another.
     - Keyboard tab > Modifier Keys ...
     - Change Caps Lock to act as Control
     - Optional: Change Control to act as Caps Lock
-
-*Last updated Mon 2013-12-30 17:04:43 PST*
