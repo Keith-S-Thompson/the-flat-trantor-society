@@ -1,11 +1,15 @@
 #!/bin/bash
 
+# TODO: 
+# - Get the timestamp from the git log of the .md file
+# - Make this script apply to a single .md file; put the other logic
+#   in a Makefile
+
 now=$(date +'%a %Y-%m-%d %T %Z')
 
 updated() {
     printf "\n*Last updated %s*\n" "$now"
 }
-
 
 for file in *.md ; do
     if [ $file = README.md ] ; then
