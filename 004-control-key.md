@@ -48,10 +48,11 @@ those ways vary considerably from one operating system to another.
 
 - **Linux** (or GNU/Linux if you prefer):
 
-  Fortunately, Linux-based systems generally *do* let you modify keyboard
-  layouts on a per-user basis.  The specific method can vary depending on
-  which distribution and desktop environment you use.  I'm running Linux
-  Mint 14 on my home system; other Linux-based systems should be similar.
+  Fortunately, Linux-based systems generally *do* let you modify
+  keyboard layouts on a per-user basis.  The specific method can vary
+  depending on which distribution and desktop environment you use.
+  I'm running Linux Mint 14 on my home system and Debian 6 at work;
+  other Linux-based systems should be similar.
 
   **Linux Mint 14**:
 
@@ -73,8 +74,11 @@ those ways vary considerably from one operating system to another.
     - Under "Ctrl key position", select "Make CapsLock an additional
       Ctrl", or whichever option you prefer.
 
-- **MacOSX**:
-
-  I'll add instructions for MacOS later.
+- **Mac OS X 10.5.8**:
+    - System Preferences
+    - Keyboard & Mouse
+    - Keyboard tab > Modifier Keys ...
+    - Change Caps Lock to act as Control
+    - Optional: Change Control to act as Caps Lock
 
 *Last updated Mon 2013-12-30 17:04:43 PST*
