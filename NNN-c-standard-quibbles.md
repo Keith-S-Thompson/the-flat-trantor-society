@@ -48,10 +48,11 @@ result of evaluating an expression rather than the expression itself).
   the evaluation of an lvalue *that's in a context that requires an
   lvalue* has undefined behavior if it doesn't designate an object.
 
-- C11 6.3.2.1p1: An *lvalue* is an expression (with an object type
-  other than **`void`**) that potentially designates an object; if an
-  lvalue does not designate an object when it is evaluated, the behavior
-  is undefined.
+- C11 6.3.2.1p1:
+  > An *lvalue* is an expression (with an object type other than
+  > **`void`**) that potentially designates an object; if an lvalue
+  > does not designate an object when it is evaluated, the behavior
+  > is undefined.
 
   This goes back to the C90 definition and adds the word "potentially"
   ([which was my idea](https://groups.google.com/forum/message/raw?msg=comp.std.c/KXjLg24jzVU/sAQRa0kjbE4J),
