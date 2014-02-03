@@ -138,13 +138,24 @@ violates a constraint, whereas this program:
 
 does not, which implies that the two forms are *not* equivalent.
 
+I wonder whether those who argue that `int main()` is valid because
+it's "equivalent" to `int main(void)` would make the same argument for:
+
+    int main(argc, argv)
+    int argc;
+    char *argv[];
+    {
+        /* ... */
+    }
+
 On the other hand, as long as non-prototype function declarations
 and definitions are part of the standard, `int main() { /* ... */ }`
 probably *should* be valid.  The entire point of continuing to support
 such definitions and declarations is to avoid breaking pre-ANSI code,
-written before prototypes were added to the language.  If `int main()`
-is invalid, then *no* pre-ANSI program is a valid C90, C99, or C11
-program, which was surely not the intent.
+written before prototypes were added to the language (it's not as
+if non-prototype declarations are useful other than for backward
+compatibility).  If `int main()` is invalid, then *no* pre-ANSI program
+is a valid C90, C99, or C11 program, which was surely not the intent.
 
 ### What is an expression?
 
