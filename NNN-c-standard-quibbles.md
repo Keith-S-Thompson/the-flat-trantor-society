@@ -10,16 +10,35 @@ which is *almost the same as the released 2011 ISO C standard ("C11").
 
 ### What is an lvalue?
 
-- C90 6.2.2.1: An *lvalue* is an expression (with an object type or
-  an incomplete type other than **`void`**) that designates an object.
+The definition of the term *lvalue* has changed several times over
+the years.  The "L" part of the name was originally an abbreviation
+of the word "left"; an *lvalue* can appear on the left hand side of
+an expression, and an *rvalue* can appear on the right hand side.
 
-  Problem: Though this conveys the intent, it implies that
-  a dereferenced null pointer is *not* an lvalue, which makes
-  lvalue-ness an execution time property.
+**TODO**: Discuss older definitions of *lvalue* and *rvalue* (the
+result of evaluating an expression rather than the expression itself).
 
-- C99 6.3.2.1p1: An *lvalue* is an expression with an object type or
-  an incomplete type other than **`void`**; if an lvalue does not designate
-  an object when it is evaluated, the behavior is undefined.
+- Kernigan & Ritchie, "The C Programming Language", 1st edition, 1978:
+
+  > An *object* is a manipulatable region of storage; an *lvalue*
+  > is an expression referring to an object.
+
+  This suffers from the same problem as the later ISO C90 definition;
+  see below.
+
+- C90 6.2.2.1:
+
+  > An *lvalue* is an expression (with an object type or an
+  > incomplete type other than **`void`**) that designates an object.
+
+  Problem: Though this conveys the intent, it implies that a
+  dereferenced null pointer is *not* an lvalue, which makes lvalue-ness
+  an execution time property.  This is clearly not the intent.
+
+- C99 6.3.2.1p1:
+  > An *lvalue* is an expression with an object type or an incomplete
+  > type other than **`void`**; if an lvalue does not designate an
+  > object when it is evaluated, the behavior is undefined.
 
   Problem: This says that any expression of an appropriate type is an
   lvalue, which is certainly not the intent.  For example, it says that
