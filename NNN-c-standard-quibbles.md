@@ -8,9 +8,7 @@ The latest draft is
 [N1570](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf),
 which is *almost the same as the released 2011 ISO C standard ("C11").
 
-<a id="lvalue">
 ### What is an lvalue?
-</a>
 
 The definition of the term *lvalue* has changed several times over
 the years.  The "L" part of the name was originally an abbreviation
