@@ -8,7 +8,7 @@ The latest draft is
 [N1570](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf),
 which is *almost the same as the released 2011 ISO C standard ("C11").
 
-## What is an lvalue?
+# What is an lvalue?
 
 - C90 6.2.2.1: An *lvalue* is an expression (with an object type or
   an incomplete type other than **`void`**) that designates an object.
@@ -68,7 +68,7 @@ The standard's definition of *lvalue* should, IMHO, use a list similar
 to the above.  The description of the *intent* can still use the
 wording of the current definition, perhaps as a footnote.
 
-## Is `int main()` necessarily valid?
+# Is `int main()` necessarily valid?
 
 5.1.2.2.1 defines two permitted definitions for `main`:
 
@@ -126,7 +126,7 @@ written before prototypes were added to the language.  If `int main()`
 is invalid, then *no* pre-ANSI program is a valid C90, C99, or C11
 program, which was surely not the intent.
 
-## What is an expression?
+# What is an expression?
 
 The syntax and semantics of expressions are described in section
 6.5 of the ISO C standard (which covers 30 pages).  But the formal
@@ -151,7 +151,7 @@ includes primary expressions, or it needs to refer to the grammar.
 A more reader-friendly (but perhaps less precise) English description
 of what an expression is should still be included.
 
-## `getchar()` when `sizeof (int) == 1`
+# `getchar()` when `sizeof (int) == 1`
 
 The standard makes some implicit assumptions about how character
 input works.  If `sizeof (int) == 1` (which requires `CHAR_BIT >= 16`),
@@ -161,6 +161,6 @@ the result is implementation-defined, but some possible implementation
 definitions would break stdio character input.  I need to study
 this further.
 
-## More stuff ...
+# More stuff ...
 
 ... as I think of it.
