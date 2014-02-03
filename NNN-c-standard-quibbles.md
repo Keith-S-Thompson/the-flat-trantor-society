@@ -6,7 +6,7 @@ of quibbles regarding the ISO C standard.
 
 The latest draft is
 [N1570](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf),
-which is *almost the same as the released 2011 ISO C standard ("C11").
+which is *almost* the same as the released 2011 ISO C standard ("C11").
 
 ### What is an lvalue?
 
@@ -88,7 +88,7 @@ The standard's definition of *lvalue* should, IMHO, use a list similar
 to the above.  The description of the *intent* can still use the
 wording of the current definition, perhaps as a footnote.
 
-### Is `int main()` necessarily valid?
+### Is `int main()` necessarily valid? Should it be?
 
 5.1.2.2.1 defines two permitted definitions for `main`:
 
@@ -104,7 +104,7 @@ not required to do so (more on that later and elsewhere).
 
 This is a very commonly used definition:
 
-- `int main() { /* ... */ }
+- `int main() { /* ... */ }`
 
 As a *definition*, it says that `main` has no parameters.  As a
 *declaration*, though, it *doesn't* say that `main` takes no arguments;
@@ -170,8 +170,8 @@ The syntax and semantics of expressions are described in section
 
 That sounds reasonable -- except that a strict reading of that
 definition implies that `42` is not an expression.  Why not?
-It contains no operators, and `42 can't be an operand if there is
-no operator.
+It contains no operators, and `42` can't be an operand if there is
+no operator, so it's not "a sequence of operators and operands".
 
 The real definition of *expression* is syntactic; anything that
 satisfies the syntactic definition of *expression* (in 6.5.17, and
