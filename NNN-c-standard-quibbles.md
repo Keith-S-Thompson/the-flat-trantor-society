@@ -14,6 +14,8 @@ which is *almost* the same as the released 2011 ISO C standard ("C11").
 - [`getchar()` when `sizeof (int) == 1`](#getchar-when-sizeof-int--1)
 - [More stuff ...](#more-stuff-)
 
+### What is an lvalue?
+
 The definition of the term *lvalue* has changed several times over
 the years.  The "L" part of the name was originally an abbreviation
 of the word "left"; an *lvalue* can appear on the left hand side of
