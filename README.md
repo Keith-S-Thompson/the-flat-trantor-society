@@ -33,12 +33,13 @@ Future posts (once I acquire the proverbial Round Tuit):
   exist for a reason.
 - Google Groups considered harmful
 - `void main()` is useful for detecting bad C textbooks (should I
-  resist the temptation to mention "shibboleth"?
+  resist the temptation to mention "shibboleth"?)
 - Multidimensional arrays in C. Array of array vs. pointer to array
   vs. array of pointers vs. pointer to pointer -- and more for higher
   dimensions. Added flexibility (not having to specify sizes at compile
   time, or definition time for VLAs) comes with added responsibility
-  (managing allocation and deallocation). Pictures with boxes and arrows.
+  (managing allocation and deallocation). Pictures with boxes and arrows,
+  probably drawn with graphviz.
 - C is more strongly typed than you think it is.
 - This is why people use Windows (a few things Linux should do better).
 - Floating-point equality: using a simple epsilon is not good enough.
