@@ -8,7 +8,11 @@ The latest draft is
 [N1570](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf),
 which is *almost* the same as the released 2011 ISO C standard ("C11").
 
-### What is an lvalue?
+- [What is an lvalue?](#what-is-an-lvalue)
+- [Is `int main()` necessarily valid? Should it be?](#is-int-main-necessarily-valid-should-it-be)
+- [What is an expression?](#what-is-an-expression)
+- [`getchar()` when `sizeof (int) == 1`](#getchar-when-sizeof-int--1)
+- [More stuff ...](#more-stuff-)
 
 The definition of the term *lvalue* has changed several times over
 the years.  The "L" part of the name was originally an abbreviation
