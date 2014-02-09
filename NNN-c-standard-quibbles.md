@@ -198,6 +198,68 @@ the result is implementation-defined, but some possible implementation
 definitions would break stdio character input.  I need to study
 this further.
 
+### Infinite loops
+
+This was a change made in ISO C 2011.
+
+6.8.5p6 says:
+
+> An iteration statement whose controlling expression is not a constant
+> expression, that performs no input/output operations, does not access
+> volatile objects, and performs no synchronization or atomic operations
+> in its body, controlling expression, or (in the case of a **`for`**
+> statement) its *expression-3*, may be assumed by the implementation
+> to terminate.
+
+with a footnote:
+
+> This is intended to allow compiler transformations such as removal of
+> empty loops even when termination cannot be proven.
+
+So this clause is all about enabling optimizations, and I'm guessing
+that it was influenced by the C compiler implementers on the committee.
+
+I presume that they had good reasons for adding this, and that it
+makes a signicant difference in the performance of real-world code.
+And if you want to write an infinite loop deliberately, you can still
+do so because of the "constant expression" exception.
+
+But it means that I can write code whose behavior is well defined
+in terms of pre-2011 C, and that can behave differently in C11.
+For example:
+
+    const int keep_going = 1;
+    while (keep_going) {
+	;
+    }
+    puts("This should never appear");
+
+In C90 and C99, the message "This should never appear" will never be
+printed.  In C11, because `keep_going` is not a constant expression,
+the compiler can legally *assume* that the loop terminates, and the
+message may or may not be printed.
+
+I'd be interested in seeing cases where this additional permission
+is actually helpful.
+
+Furthermore, I find the way this permission is worded to be clumsy.
+It's a statement about what the implementation is permitted to
+*assume*.  What really matters is what the implementation is permitted
+to *do*.  A better and more consistent way of expressing this, I think,
+would have been something like:
+
+> If an iteration statement whose controlling expression is not a
+> constant expression, that performs no input/output operations,
+> does not access volatile objects, and performs no synchronization
+> or atomic operations in its body, controlling expression, or
+> (in the case of a **`for`** statement) its *expression-3* does
+> not explicitly terminate, it is unspecified whether it terminates
+> or not.
+
+Or it could say that if such a loop does not terminate, the behavior
+is undefined -- but that would give compilers much more latitude than
+the current wording.
+
 ### More stuff ...
 
 ... as I think of it.
