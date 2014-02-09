@@ -57,7 +57,7 @@ those ways vary considerably from one operating system to another.
   and [this answer](http://unix.stackexchange.com/questions/114022/map-caps-lock-to-control-in-linux-mint/114023#114023)
   on [unix.stackexchange.com](http://unix.stackexchange.com).
 
-  **Debian 6**:
+  **Debian 6, Gnome desktop**:
 
     - "System" > "Preferences" > "Keyboard"
     - Select the "Layouts" tab
