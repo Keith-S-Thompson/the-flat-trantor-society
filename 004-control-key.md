@@ -51,10 +51,22 @@ those ways vary considerably from one operating system to another.
   Fortunately, Linux-based systems generally *do* let you modify
   keyboard layouts on a per-user basis.  The specific method can vary
   depending on which distribution and desktop environment you use.
-  I'm running Linux Mint 14 on my home system and Debian 6 at work;
-  other Linux-based systems should be similar.
+  One of the following methods is likely to work.
 
-  **Linux Mint 14**:
+  See also [this question](http://unix.stackexchange.com/questions/114022/map-caps-lock-to-control-in-linux-mint)
+  and [this answer](http://unix.stackexchange.com/questions/114022/map-caps-lock-to-control-in-linux-mint/114023#114023)
+  on [unix.stackexchange.com](http://unix.stackexchange.com).
+
+  **Debian 6**:
+
+    - "System" > "Preferences" > "Keyboard"
+    - Select the "Layouts" tab
+    - Highlight the layout you use (mine is "USA")
+    - Click the "Options" button
+    - Under "Ctrl key position", select "Make CapsLock an additional
+      Ctrl", or whichever option you prefer.
+
+  **Linux Mint 14, Cinnamon desktop**:
 
     - From the "System Tools" menu, select "System Settings", then
       open "Keyboard Layout"
@@ -65,14 +77,24 @@ those ways vary considerably from one operating system to another.
       keep the Caps_Lock keysym", which makes both Caps Lock and Control
       act as a Control key.
 
-  **Debian 6**:
+  **Linux Mint 15, Cinnamon destkop**:
 
-    - "System" > "Preferences" > "Keyboard"
+    - From the "System Tools" menu, select "System Settings", then
+      open "Regional Settings"
     - Select the "Layouts" tab
-    - Highlight the layout you use (mine is "USA")
-    - Click the "Options" button
-    - Under "Ctrl key position", select "Make CapsLock an additional
-      Ctrl", or whichever option you prefer.
+    - Click the "Options..."  button.
+    - Open "Caps Lock key behavior" and select the
+      option you prefer.  I use "Make Caps Lock an additional Control but
+      keep the Caps_Lock keysym", which makes both Caps Lock and Control
+      act as a Control key.
+
+  **Linux Mint 16, KDE desktop**:
+    - From the main menu, select "Applications", then "Settings", then "System Settings".
+    - Under "Hardware", open "Input Devices"
+    - Keyboard settings are shown by default; open the "Advanced" tab.
+    - Click the "Control keyboard options" checkbox.
+    - Open "Ctrl Key Position"
+    - Enable and select "Caps lock as Ctrl" or "Swap Ctrl and Caps Lock"
 
 - **Mac OS X 10.5.8**:
     - System Preferences
