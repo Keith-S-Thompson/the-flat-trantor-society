@@ -9,8 +9,10 @@ There have been three major editions of the ISO C standard:
 - **C89/C90:** The original ISO C standard was published in 1990, and was closely
   based on the 1989 ANSI C standard.  The 1989 ANSI and 1990 ISO
   standards describe exactly the same language; ISO added some
-  introductory material and renumbered the sections.  The 1995
-  amendment added digraphs and wide character support.
+  introductory material and renumbered the sections.
+  [This web page](http://www.bsb.me.uk/ansi-c/ansi-c) appears to be
+  a draft of the ANSI version of the standard.  The 1995 amendment
+  added digraphs and wide character support.
 - **C99:** The second version was published in 1999.
   [N1256](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf)
   includes the full 1999 standard with the three Technical Corrigenda
@@ -19,6 +21,8 @@ There have been three major editions of the ISO C standard:
   [N1570](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)
   draft is freely available, and is very nearly identical to the
   released standard.  (There has been one minor Technical Corrigendum.)
+
+Subtopics:
 
 - [What is an lvalue?](#what-is-an-lvalue)
 - [Is `int main()` necessarily valid? Should it be?](#is-int-main-necessarily-valid-should-it-be)
