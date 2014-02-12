@@ -14,18 +14,21 @@ into blogspot.
 Future posts (once I acquire the proverbial Round Tuit):
 
 - [[**DONE**]](http://the-flat-trantor-society.blogspot.com/2013/12/where-should-control-key-be.html)
-  Where should the Control key be located?  Almost all modern computer
+  <strike>Where should the Control key be located?  Almost all modern computer
   keyboards put the Caps Lock key directly to the left of the 'A'
   key, with the Shift key below it and the Control key below Shift.
   I strongly prefer to have the Control key directly to the left of
   'A', and I rarely use Caps Lock.  I'll explain why, and how you can 
-  reconfigure your own keyboard in software.
-- What is an "lvalue", and how has the meaning evolved over time?
+  reconfigure your own keyboard in software.</strike>
+- [[**DONE**]](http://the-flat-trantor-society.blogspot.com/2014/02/c-standard-quibbles.html)
+  <strike>What is an "lvalue", and how has the meaning evolved over time?
   The three editions of the ISO C standard have three different
   definitions of the term "lvalue".  The definition has improved
   over time, though all of them differ from the original meaning.
   (The wording in the 2011 standard is based on a suggestion I made
-  in comp.std.c.)
+  in comp.std.c.)</strike><br>
+  I've posted this as one section of a more general article about
+  quibbles with the ISO C standard.
 - Shell commands: `echo` vs. `printf`.
 - `#!/usr/bin/foo` vs. `#!/usr/bin/env foo`
 - `crontab -e` considered harmful; more generally, how to manage your
