@@ -24,16 +24,89 @@ There have been three major editions of the ISO C standard:
 
 Subtopics (these links work on
 [my GitHub page](https://github.com/Keith-S-Thompson/the-flat-trantor-society/blob/master/005-c-standard-quibbles.md]
-but not on the blog):
+but not on the blog). **TODO:** Figure out how to fix that or give up and delete the links):
 
-- [What is an lvalue?](#what-is-an-lvalue)
 - [Is `int main()` necessarily valid? Should it be?](#is-int-main-necessarily-valid-should-it-be)
+- [What is an lvalue?](#what-is-an-lvalue)
 - [What is an expression?](#what-is-an-expression)
-- [`getchar()` when `sizeof (int) == 1`](#getchar-when-sizeof-int--1)
 - [Infinite loops](#infinite-loops)
+- [`fgetc()` when `sizeof (int) == 1`](#fgetc-when-sizeof-int--1)
 - [More stuff ...](#more-stuff-)
 
+### Is `int main()` necessarily valid? Should it be?
+
+##### ISO C 5.1.2.2.1 Program startup
+
+5.1.2.2.1 defines two permitted definitions for `main`:
+
+- `int main(void) { /* ... */}`
+- `int main(int argc, char *argv[]) { /* ... */ }`
+
+followed by:
+
+> or equivalent; or in some other implementation-defined manner.
+
+Which means that compilers *may* accept `void main(void)`, but are
+not required to do so (more on that later and elsewhere).
+
+This is a very commonly used definition:
+
+- `int main() { /* ... */ }`
+
+As a *definition*, it says that `main` has no parameters.  As a
+*declaration*, though, it *doesn't* say that `main` takes no arguments;
+rather, it says that `main` takes an unspecified but fixed number
+and type(s) of parameters -- and if you call it with arguments that
+are incompatible with the definition, the behavior is undefined.
+
+I argue that `int main()` is *not* equivalent to `int main(void)`,
+and therefore is not a valid definition *unless* it's covered by the
+"or in some other implementation-defined manner" clause (i.e., unless
+the implementation explicitly documents that it supports it).
+
+`int main() { /* ... */ }` is an old-style non-prototype definition.
+Support for such definitions is obsolescent feature (C11 6.11.7).
+
+Furthermore, this program:
+
+    int main(void) {
+        if (0) {
+            main(42);
+        }
+    }
+
+violates a constraint, whereas this program:
+
+    int main() {
+        if (0) {
+            main(42);
+        }
+    }
+
+does not, which implies that the two forms are *not* equivalent.
+
+I wonder whether those who argue that `int main()` is valid because
+it's "equivalent" to `int main(void)` would make the same argument for:
+
+    int main(argc, argv)
+    int argc;
+    char *argv[];
+    {
+        /* ... */
+    }
+
+On the other hand, as long as non-prototype function declarations
+and definitions are part of the standard, `int main() { /* ... */ }`
+probably *should* be valid.  The entire point of continuing to support
+such definitions and declarations is to avoid breaking pre-ANSI code,
+written before prototypes were added to the language (it's not as
+if non-prototype declarations are useful other than for backward
+compatibility).  If `int main()` is invalid, then *no* pre-ANSI program
+is a valid C90, C99, or C11 program, which was surely not the intent.
+
 ### What is an lvalue?
+
+##### ISO C 6.2.2.1p1 Lvalues, arrays, and function designators
 
 The definition of the term *lvalue* has changed several times over
 the years.  The "L" part of the name was originally an abbreviation
@@ -113,76 +186,9 @@ The standard's definition of *lvalue* should, IMHO, use a list similar
 to the above.  The description of the *intent* can still use the
 wording of the current definition, perhaps as a footnote.
 
-### Is `int main()` necessarily valid? Should it be?
-
-5.1.2.2.1 defines two permitted definitions for `main`:
-
-- `int main(void) { /* ... */}`
-- `int main(int argc, char *argv[]) { /* ... */ }`
-
-followed by:
-
-> or equivalent; or in some other implementation-defined manner.
-
-Which means that compilers *may* accept `void main(void)`, but are
-not required to do so (more on that later and elsewhere).
-
-This is a very commonly used definition:
-
-- `int main() { /* ... */ }`
-
-As a *definition*, it says that `main` has no parameters.  As a
-*declaration*, though, it *doesn't* say that `main` takes no arguments;
-rather, it says that `main` takes an unspecified but fixed number
-and type(s) of parameters -- and if you call it with arguments that
-are incompatible with the definition, the behavior is undefined.
-
-I argue that `int main()` is *not* equivalent to `int main(void)`,
-and therefore is not a valid definition *unless* it's covered by the
-"or in some other implementation-defined manner" clause (i.e., unless
-the implementation explicitly documents that it supports it).
-
-`int main() { /* ... */ }` is an old-style non-prototype definition.
-Support for such definitions is obsolescent feature (C11 6.11.7).
-
-Furthermore, this program:
-
-    int main(void) {
-        if (0) {
-            main(42);
-        }
-    }
-
-violates a constraint, whereas this program:
-
-    int main() {
-        if (0) {
-            main(42);
-        }
-    }
-
-does not, which implies that the two forms are *not* equivalent.
-
-I wonder whether those who argue that `int main()` is valid because
-it's "equivalent" to `int main(void)` would make the same argument for:
-
-    int main(argc, argv)
-    int argc;
-    char *argv[];
-    {
-        /* ... */
-    }
-
-On the other hand, as long as non-prototype function declarations
-and definitions are part of the standard, `int main() { /* ... */ }`
-probably *should* be valid.  The entire point of continuing to support
-such definitions and declarations is to avoid breaking pre-ANSI code,
-written before prototypes were added to the language (it's not as
-if non-prototype declarations are useful other than for backward
-compatibility).  If `int main()` is invalid, then *no* pre-ANSI program
-is a valid C90, C99, or C11 program, which was surely not the intent.
-
 ### What is an expression?
+
+##### ISO C 6.5 Expressions
 
 The syntax and semantics of expressions are described in section
 6.5 of the ISO C standard (which covers 30 pages).  But the formal
@@ -207,17 +213,9 @@ includes primary expressions, or it needs to refer to the grammar.
 A more reader-friendly (but perhaps less precise) English description
 of what an expression is should still be included.
 
-### `getchar()` when `sizeof (int) == 1`
-
-The standard makes some implicit assumptions about how character
-input works.  If `sizeof (int) == 1` (which requires `CHAR_BIT >= 16`),
-`EOF` isn't distinct from any valid `char` value.  I think there are
-also some assumptions about how unsigned-to-signed conversion works;
-the result is implementation-defined, but some possible implementation
-definitions would break stdio character input.  I need to study
-this further.
-
 ### Infinite loops
+
+##### ISO C 6.8.5 Iteration statements, paragraph 6
 
 This was a change made in ISO C 2011.
 
@@ -278,6 +276,18 @@ would have been something like:
 Or it could say that if such a loop does not terminate, the behavior
 is undefined -- but that would give compilers much more latitude than
 the current wording.
+
+### `fgetc()` when `sizeof (int) == 1`
+
+##### ISO C 7.21.7.1 The `fgetc` function
+
+The standard makes some implicit assumptions about how character
+input works.  If `sizeof (int) == 1` (which requires `CHAR_BIT >= 16`),
+`EOF` isn't distinct from any valid `char` value.  I think there are
+also some assumptions about how unsigned-to-signed conversion works;
+the result is implementation-defined, but some possible implementation
+definitions would break stdio character input.  I need to study
+this further.
 
 ### More stuff ...
 
