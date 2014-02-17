@@ -13,6 +13,8 @@ Quoting the ISO C standard:
 > A *string* is a contiguous sequence of characters terminated by
 > and including the first null character.
 
+<!-- more -->
+
 So what happens if you call a C string function with a pointer into
 a char array that isn't properly terminated by a null character?
 Such an array does not contain a "string" in the sense that C

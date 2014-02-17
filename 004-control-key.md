@@ -30,6 +30,8 @@ Fortunately, there are ways to remap your keyboard in software so that
 the key labeled "Caps Lock" acts as a Control key.  Unfortunately,
 those ways vary considerably from one operating system to another.
 
+<!-- more -->
+
 - **Microsoft Windows**:
 
   Microsoft Windows does let you do some limited keyboard remapping
