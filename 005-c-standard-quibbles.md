@@ -33,6 +33,8 @@ but not on the blog). **TODO:** Figure out how to fix that or give up and delete
 - [`fgetc()` when `sizeof (int) == 1`](#fgetc-when-sizeof-int--1)
 - [More stuff ...](#more-stuff-)
 
+<!-- more -->
+
 ### Is `int main()` necessarily valid? Should it be?
 
 ##### ISO C 5.1.2.2.1 Program startup
