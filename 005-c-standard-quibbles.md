@@ -188,6 +188,44 @@ The standard's definition of *lvalue* should, IMHO, use a list similar
 to the above.  The description of the *intent* can still use the
 wording of the current definition, perhaps as a footnote.
 
+### Null pointer constants and parenthesized expressions
+
+##### ISO C 6.3.2.3 Pointers (under 6.3 Conversions)
+
+Paragraph 3:
+
+    An integer constant expression with the value 0, or such an
+    expression cast to type **`void *`**, is called a *null pointer
+    constant*.
+
+The problem: 6.5.1 (Primary expressions) says that a parenthesized
+expression
+
+    is an lvalue, a function designator, or a void expression if
+    the unparenthesized expression is, respectively, an lvalue,
+    a function designator, or a void expression.
+
+It *doesn't* say that a parenthesized null pointer constant is a null
+pointer constant.
+
+Which implies, strictly speaking, that `(void*)0` is a null pointer constant,
+but `((void*)0)` is not.
+
+And since 7.1.2 "Standard headers" requires:
+
+    Any definition of an object-like macro described in this clause shall
+    expand to code that is fully protected by parentheses where necessary,
+    so that it groups in an arbitrary expression as if it were a single
+    identifier.
+
+this implies that the `NULL` macro may not be defined as `(void*)0`,
+since, for example, that would cause `sizeof NULL` to be a syntax
+error.
+
+I'm sure that most C implementations do treat a parenthesized null
+pointer constant as a null pointer constant, and define `NULL` either
+as `0`, `((void*)0)`, or in some other manner.
+
 ### What is an expression?
 
 ##### ISO C 6.5 Expressions
@@ -214,6 +252,37 @@ The definition in 6.5p1 either needs to be re-worded so that it
 includes primary expressions, or it needs to refer to the grammar.
 A more reader-friendly (but perhaps less precise) English description
 of what an expression is should still be included.
+
+### Integer constant expressions
+
+##### ISO C 6.6.6 Constant expressions, paragraph 6
+
+Credit for this goes to [Stack Overflow](http://www.stackoverflow.com) user
+[pablo1977](http://stackoverflow.com/users/2698605/pablo1977) who posted
+[this question](http://stackoverflow.com/q/21972815/827263).
+
+6.6.6p6 says:
+
+    An *integer constant expression* shall have integer type and
+    shall only have operands that are integer constants, enumeration
+    constants, character constants, **`sizeof`** expressions whose
+    results are integer constants, **`_Alignof`** expressions, and
+    floating constants that are the immediate operands of casts. Cast
+    operators in an integer constant expression shall only convert
+    arithmetic types to integer types, except as part of an operand
+    to the **`sizeof`** or **`_Alignof`** operator.
+
+The problem: There's no indication that a parenthesized constant is a
+constant.  So `(int)3.14` is a constant expression, but `(int)(3.14)`,
+strictly speaking, is not, because `3.14` is a floating constant but
+`(3.14)` is not.
+
+It seems obvious that if `(int)3.14` is an integer constant expression,
+then there's no reason that `(int)(3.14)` shouldn't be one as well,
+and though I haven't checked I suspect that all existing compilers
+treat it as one.  If the wording of the standard is to be corrected,
+some care will have to be taken so that both `(int)(3.14)` and
+`(int)((3.14))` are integer constant expressions
 
 ### Infinite loops
 
