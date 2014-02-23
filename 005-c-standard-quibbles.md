@@ -22,6 +22,8 @@ There have been three major editions of the ISO C standard:
   draft is freely available, and is very nearly identical to the
   released standard.  (There has been one minor Technical Corrigendum.)
 
+<!-- This does not yet reflect new content -->
+
 Subtopics (these links work on
 [my GitHub page](https://github.com/Keith-S-Thompson/the-flat-trantor-society/blob/master/005-c-standard-quibbles.md]
 but not on the blog). **TODO:** Figure out how to fix that or give up and delete the links):
