@@ -31,9 +31,12 @@ Future posts (once I acquire the proverbial Round Tuit):
   quibbles with the ISO C standard.
 - Shell commands: `echo` vs. `printf`.
 - `#!/usr/bin/foo` vs. `#!/usr/bin/env foo`
-- `crontab -e` considered harmful; more generally, how to manage your
-  crontab. Don't be tempted to edit `/etc/crontab`; per-user crontabs
-  exist for a reason.
+- `crontab -e` considered harmful; more generally, how to manage
+  your crontab (keep it in a file under source control and use
+  `crontab filename` to install it).  And don't be tempted to edit
+  `/etc/crontab` or `/etc/cron.d/*`; per-user crontabs exist for a
+  reason. (Hmm, what's the point of system crontabs if the `root`
+  user can use use the `crontab` command?)
 - Google Groups considered harmful
 - `void main()` is useful for detecting bad C textbooks (should I
   resist the temptation to mention "shibboleth"?)
