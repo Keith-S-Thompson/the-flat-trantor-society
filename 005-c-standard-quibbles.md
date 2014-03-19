@@ -297,14 +297,14 @@ Credit for this goes to [Stack Overflow](http://www.stackoverflow.com) user
 
 6.6.6p6 says:
 
-    An *integer constant expression* shall have integer type and
-    shall only have operands that are integer constants, enumeration
-    constants, character constants, **`sizeof`** expressions whose
-    results are integer constants, **`_Alignof`** expressions, and
-    floating constants that are the immediate operands of casts. Cast
-    operators in an integer constant expression shall only convert
-    arithmetic types to integer types, except as part of an operand
-    to the **`sizeof`** or **`_Alignof`** operator.
+> An *integer constant expression* shall have integer type and
+> shall only have operands that are integer constants, enumeration
+> constants, character constants, **`sizeof`** expressions whose
+> results are integer constants, **`_Alignof`** expressions, and
+> floating constants that are the immediate operands of casts. Cast
+> operators in an integer constant expression shall only convert
+> arithmetic types to integer types, except as part of an operand
+> to the **`sizeof`** or **`_Alignof`** operator.
 
 The problem: There's no indication that a parenthesized constant is a
 constant.  So `(int)3.14` is a constant expression, but `(int)(3.14)`,
@@ -352,7 +352,7 @@ For example:
 
     const int keep_going = 1;
     while (keep_going) {
-	;
+        ;
     }
     puts("This should never appear");
 
