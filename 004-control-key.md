@@ -105,7 +105,8 @@ those ways vary considerably from one operating system to another.
   typing, for example, Ctrl-F1, Ctrl-F2, etc.).  I haven't yet tried
   any of these, but the most straightforward method seems to be:
     - Add the line `XKBOPTIONS="ctrl:nocaps"` to `/etc/default/keyboard`
-    - $ sudo dpkg-reconfigure -phigh console-setup
+    - `$ sudo dpkg-reconfigure -phigh console-setup`
+
   Replace `nocaps` by `swapcaps` if you prefer to swap Control and
   Caps-Lock rather than making both keys act like Control keys.
 
