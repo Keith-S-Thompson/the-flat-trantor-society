@@ -115,7 +115,7 @@ is a valid C90, C99, or C11 program, which was surely not the intent.
 The definition of the term *lvalue* has changed several times over
 the years.  The "L" part of the name was originally an abbreviation
 of the word "left"; an *lvalue* can appear on the left hand side of
-an expression, and an *rvalue* can appear on the right hand side.
+an assignment, and an *rvalue* can appear on the right hand side.
 
 **TODO**: Discuss older definitions of *lvalue* and *rvalue* (the
 result of evaluating an expression rather than the expression itself).
