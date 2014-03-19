@@ -112,13 +112,46 @@ is a valid C90, C99, or C11 program, which was surely not the intent.
 
 ##### ISO C 6.2.2.1p1 Lvalues, arrays, and function designators
 
-The definition of the term *lvalue* has changed several times over
-the years.  The "L" part of the name was originally an abbreviation
-of the word "left"; an *lvalue* can appear on the left hand side of
-an assignment, and an *rvalue* can appear on the right hand side.
+The definition of the term *lvalue* (sometimes written *l-value*)
+has changed several times over the years.  The "L" part of the
+name was originally an abbreviation of the word "left"; an *lvalue*
+can appear on the left hand side of an assignment, and an *rvalue*
+can appear on the right hand side.
 
-**TODO**: Discuss older definitions of *lvalue* and *rvalue* (the
-result of evaluating an expression rather than the expression itself).
+My (somewhat vague) recollection is that the term "l-value"
+originally referred to a kind of *value*, not (as it does now
+in C) to a kind of *expression*.  Given that `n` is an integer
+variable, the expression `n` could be "evaluated for its l-value"
+(which identifies the object that it designates, ignoring any value
+stored in that object), or it could be "evaluated for its r-value"
+(which retrieves the value stored in the object).  The expression
+`n` would be evaluated for its l-value if it appeared on the left
+side of an assignment, or for its r-value in most other contexts.
+Apparently the terms "l-value" and "r-value" originated in
+[CPL](http://en.wikipedia.org/wiki/CPL_(programming_language)),
+the ancestor of BCPL, which led to B, which led to C.
+
+Note carefully that, under this definition, an "l-value" is *not* a
+pointer value.  An "l-value" was the *identity* of an object, not its
+address.  (Evaluating an expression for its l-value might well involve
+computing an address internally.)
+
+I've tried and failed to find a reference for these definitions,
+but a footnote in section 6.3.2.1 of the C standard:
+
+    The name "lvalue" comes originally from the assignment expression
+    **`E1 = E2`**, in which the left operand **`E1`** is required
+    to be a (modifiable) lvalue.  It is perhaps better considered as
+    representing an object "locator value".  What is sometimes called
+    "rvalue" is in this International Standard described as the
+    "value of an expression".
+
+at least strongly suggests that an *rvalue* is a value, not an
+expression that yields a value -- though an lvalue is a kind of
+expression.  The term "rvalue" does not appear anywhere else in the
+C standard.
+
+But that's all pre-C history.
 
 - Kernigan & Ritchie, "The C Programming Language", 1st edition, 1978:
 
@@ -166,25 +199,24 @@ result of evaluating an expression rather than the expression itself).
   what "potentially designates" means.
 
 Ultimately, I think that the term *lvalue* can be defined
-*syntactically*.  I'll work out the details later, but I think you
-can go through section 6.5 of the standard and determine that certain
-kinds of expressions are always lvalues, other kinds of expressions
-never are, and others are an lvalue or not based on easily describable
-criteria.
+*syntactically*.  I think you can go through section 6.5 of the
+standard and determine that certain kinds of expressions are always
+lvalues, other kinds of expressions never are, and others are an
+lvalue or not based on criteria that are easy to specify.
 
-The following expressions, and only these expressions,
-are *lvalues*:
+An expression is an *lvalue* if and only if it one of the following:
 
-- An identifier, if it designates an object (as opposed to a function).
-- A string literal
-- A parenthesized expression, if the unparenthesized expression is
-  an lvalue.
-- An array subscripting expression
-- A reference to a struct or union member (`x.y`, `x->y`)
-- A compound literal
-- An indirection expression `*x`
+- An identifier that is not a function name or enumeration constant;
+- A string literal;
+- A parenthesized expression, if and only if the unparenthesized
+  expression is an lvalue;
+- An indirection expression `*x`;
+- A subscript expression (`x[y]`) (this follows from the definition of
+  the subscript operator and the fact that `*x` is an lvalue)
+- A reference to a struct or union member (`x.y`, `x->y`); or
+- A compound literal.
 
-(I don't guarantee this is 100% correct; I'll have to re-check it.)
+(I don't guarantee this is 100% correct.)
 
 The standard's definition of *lvalue* should, IMHO, use a list similar
 to the above.  The description of the *intent* can still use the
