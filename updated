@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $# != 1 ] ; then
+    echo "Usage: $0 filename" 1>*2
+    exit 1
+fi
+
+file="$1"
+timestamp="$(git log -n 1 $file | sed -n '/^Date: */s///p')"
+printf "\n*Last updated %s*\n" "$timestamp"
+
