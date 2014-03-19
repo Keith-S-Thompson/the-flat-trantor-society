@@ -98,6 +98,17 @@ those ways vary considerably from one operating system to another.
     - Open "Ctrl Key Position"
     - Enable and select "Caps lock as Ctrl" or "Swap Ctrl and Caps Lock"
 
+  **Linux virtual console**:<br>
+  [This web page](http://www.emacswiki.org/emacs/MovingTheCtrlKey#toc7)
+  discusses various ways to remap the control key in the Linux
+  virtual console.  (This is the text-only console reachable by
+  typing, for example, Ctrl-F1, Ctrl-F2, etc.).  I haven't yet tried
+  any of these, but the most straightforward method seems to be:
+    - Add the line `XKBOPTIONS="ctrl:nocaps"` to `/etc/default/keyboard`
+    - $ sudo dpkg-reconfigure -phigh console-setup
+  Replace `nocaps` by `swapcaps` if you prefer to swap Control and
+  Caps-Lock rather than making both keys act like Control keys.
+
 - **Mac OS X 10.5.8**:
     - System Preferences
     - Keyboard & Mouse
