@@ -101,14 +101,16 @@ those ways vary considerably from one operating system to another.
   **Linux virtual console**:<br>
   [This web page](http://www.emacswiki.org/emacs/MovingTheCtrlKey#toc7)
   discusses various ways to remap the control key in the Linux
-  virtual console.  (This is the text-only console reachable by
-  typing Ctrl-Alt-F1, Ctrl-Alt-F2, etc.).  I haven't yet tried
-  any of these, but the most straightforward method seems to be:
+  virtual console.  (This is the text-only console reachable by typing
+  Ctrl-Alt-F1, Ctrl-Alt-F2, etc.).  The most straightforward method
+  seems to be:
     - Add the line `XKBOPTIONS="ctrl:nocaps"` to `/etc/default/keyboard`
     - `$ sudo dpkg-reconfigure -phigh console-setup`
 
   Replace `nocaps` by `swapcaps` if you prefer to swap Control and
   Caps-Lock rather than making both keys act like Control keys.
+
+  I've tried this on Debian 6, and it works after a reboot.
 
 - **Mac OS X 10.5.8**:
     - System Preferences
