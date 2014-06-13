@@ -116,6 +116,8 @@ The bottom line is this: in spite of its frankly misleading name,
 better-behaved alternative, something that does what most people assume
 `strncpy()` does.]
 
+[**TODO**: Cite question 13.2 of the [comp.lang.c FAQ](http://www.c-faq.com/).]
+
 Now having a function like this in the standard library isn't such
 a bad thing in itself.  It's designed to deal with a specialized
 data structure, a fixed-size character array of **N** characters
