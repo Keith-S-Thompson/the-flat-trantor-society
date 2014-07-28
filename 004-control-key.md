@@ -60,7 +60,6 @@ those ways vary considerably from one operating system to another.
   on [unix.stackexchange.com](http://unix.stackexchange.com).
 
   **Debian 6, Gnome desktop**:
-
     - "System" > "Preferences" > "Keyboard"
     - Select the "Layouts" tab
     - Highlight the layout you use (mine is "USA")
@@ -69,7 +68,6 @@ those ways vary considerably from one operating system to another.
       Ctrl", or whichever option you prefer.
 
   **Linux Mint 14, Cinnamon desktop**:
-
     - From the "System Tools" menu, select "System Settings", then
       open "Keyboard Layout"
     - Select the "Layouts" tab
@@ -80,7 +78,6 @@ those ways vary considerably from one operating system to another.
       act as a Control key.
 
   **Linux Mint 15, Cinnamon destkop**:
-
     - From the "System Tools" menu, select "System Settings", then
       open "Regional Settings"
     - Select the "Layouts" tab
@@ -98,7 +95,26 @@ those ways vary considerably from one operating system to another.
     - Open "Ctrl Key Position"
     - Enable and select "Caps lock as Ctrl" or "Swap Ctrl and Caps Lock"
 
-  **Linux virtual console**:<br>
+  **Linux Mint 17, Xfce desktop**:
+  Oddly, the Xfce settings GUI doesn't seem to have an option to change the
+  behavior of the Caps lock key. This command:
+
+    setxkbmap -option ctrl:nocaps
+
+  causes the Control and Caps lock keys to act as Control, but the
+  setting expires when the X server shuts down (typically on reboot).
+  Presumably
+
+    setxkbmap -option ctrl:swapcaps
+
+  will swap the Control and Caps lock keys, though I haven't tried it.<br>
+  **TODO:** Figure out how to run this automatically on reboot. I *think*
+  the answer is to add a line to `/etc/default/keyboard` as described
+  below under "**Linux virtual console**", but I haven't tested it yet.
+
+  Modifying `/etc/default/keyboard` will affect all users on the system.
+
+  **Linux virtual console**:
   [This web page](http://www.emacswiki.org/emacs/MovingTheCtrlKey#toc7)
   discusses various ways to remap the control key in the Linux
   virtual console.  (This is the text-only console reachable by typing
