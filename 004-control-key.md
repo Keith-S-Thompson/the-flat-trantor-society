@@ -59,6 +59,37 @@ those ways vary considerably from one operating system to another.
   and [this answer](http://unix.stackexchange.com/questions/114022/map-caps-lock-to-control-in-linux-mint/114023#114023)
   on [unix.stackexchange.com](http://unix.stackexchange.com).
 
+  **UNIX-like command-line solutions:
+
+  Either of the following commands should work to map Caps Lock to
+  Control (making both keys act like a Control key) for the duration
+  of the current X session:
+
+    xmodmap -e 'clear Lock' \
+            -e 'keycode 0x42 = Control_L' \
+            -e 'add Control = Control_L' 
+
+  or:
+
+    setxkbmap -option ctrl:nocaps
+
+  I think the `setxkbmap` command is newer; you might have to resort to
+  `xmodmap` for some older systems.
+
+  I think that
+
+    setxkbmap -option ctrl:swapcaps
+
+  will swap the Control and Caps Lock keys, but I haven't tried it..
+
+  Both of these have the drawback that the behavior will revert to
+  the default when the current X session terminates (typically when
+  you log out or reboot).  You can either re-execute the command on
+  startup, or arrange for the system to do it for you.
+
+  I find it more convenient, where possible, to do this through the
+  desktop GUI, so the setting is persistent across reboots.
+
   **Debian 6, Gnome desktop**:
     - "System" > "Preferences" > "Keyboard"
     - Select the "Layouts" tab
@@ -96,21 +127,9 @@ those ways vary considerably from one operating system to another.
     - Enable and select "Caps lock as Ctrl" or "Swap Ctrl and Caps Lock"
 
   **Linux Mint 17, Xfce desktop**:
-  Oddly, the Xfce settings GUI doesn't seem to have an option to change the
-  behavior of the Caps lock key. This command:
-
-    setxkbmap -option ctrl:nocaps
-
-  causes the Control and Caps lock keys to act as Control, but the
-  setting expires when the X server shuts down (typically on reboot).
-  Presumably
-
-    setxkbmap -option ctrl:swapcaps
-
-  will swap the Control and Caps lock keys, though I haven't tried it.<br>
-  **TODO:** Figure out how to run this automatically on reboot. I *think*
-  the answer is to add a line to `/etc/default/keyboard` as described
-  below under "**Linux virtual console**", but I haven't tested it yet.
+  Oddly, the Xfce settings GUI doesn't seem to have an option to change
+  the behavior of the Caps Lock key.  See "**UNIX-like command-line
+  solutions**" above.
 
   Modifying `/etc/default/keyboard` will affect all users on the system.
 
