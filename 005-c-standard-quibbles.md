@@ -382,6 +382,51 @@ Or it could say that if such a loop does not terminate, the behavior
 is undefined -- but that would give compilers much more latitude than
 the current wording.
 
+### `printf` formats for short and char types
+
+##### ISO C 7.21.6.1 The `fprintf` function
+
+Arguments to variadic functions (after the initial fixed arguments)
+undergo argument promotions, so that an argument of type `float` is
+promoted to `double`, and an argument of any integer type narrower
+than `int` is promoted to either `int` or `unsigned int`.  This is
+described in 6.5.2.2, "Function calls".
+
+So it's not actually possible, for example, to pass a `short` argument
+to `printf` or `fprintf`; it will always be passed as a converted
+`int` value.
+
+And yet the `printf` functions support `"hh""` and `"h"` length
+modifies that specify `signed char`, `unsigned char`, `signed short`,
+or `unsigned short` arguments.
+
+The semantics are well defined.  The standard says that the argument
+will have been promoted according to the integer promotions, but its
+value is *converted* to the specified type before printing.
+
+For `"%hd"`, the argument will normally be of type `short`, which is
+promoted to `int` -- but there's no prohibition on passing an argument
+that's of type `int`.  If the argument value is in the range `SHRT_MIN`
+to `SHRT_MAX`, then the behavior of `"%hd"` is identical to the
+behavior of `"%d"`.  If it's outside that range, then the conversion
+yields an implementation-defined result.  For `"%hu"` vs. `"%u"`, or
+`"%hx"` vs. `"%x"`, the behavior is still identical if the value is
+in range, but the result of an unsigned conversion is well defined.
+
+The `"hh"` and `"h"` length modifiers may be combined with any of the
+**`d`**, **`i`**, **`o`**, **`u`**, **`x`**, or **`X`** conversion
+specifiers.
+
+They can be meaningfully used with the **`n`** conversion
+specifier. `"%n"` stores the number of characters written so far
+via a corresponding `int*` argument, and can be used with any of the
+`"hh"`, `"h"`, `"l"`, `"ll"`, `"j"`, `"z"`, or `"t"` length modifiers.
+But how useful is it to store a count in a `short` or `signed char`
+object rather than an `int` object?
+
+So the question is, why were the `"h"` and `"hh"` length modifiers
+added to the language?  I don't have an answer to that.
+
 ### `fgetc()` when `sizeof (int) == 1`
 
 ##### ISO C 7.21.7.1 The `fgetc` function
