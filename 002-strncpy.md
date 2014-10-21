@@ -112,10 +112,6 @@ except that C99 and C11 add a footnote to the `strncpy()` description:
 The bottom line is this: in spite of its frankly misleading name,
 `strncpy()` isn't really a string function.
 
-[**TODO**: Discuss `dest[0]='\0'; strncat(dest, src, size);` as a
-better-behaved alternative, something that does what most people assume
-`strncpy()` does.]
-
 [**TODO**: Cite question 13.2 of the [comp.lang.c FAQ](http://www.c-faq.com/).]
 
 Now having a function like this in the standard library isn't such
@@ -132,7 +128,11 @@ The problem is that the name `strncpy()` strongly implies that it's a
 
 Most of the other `strn*()` functions are safer versions of their
 unbounded counterparts: `strcat()` vs. `strncat()` and `strcmp()`
-vs `strcmp()`.  [**TODO**: Discuss the bounds-checking versions added
+vs `strcmp()`.  THe 2011 ISO C standard (see the [N1570 draft](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)
+adds an optional Annex K, "Bounds-checking interfaces", including new functions
+`strcpy_s()` and `strncpy_s()`.
+
+[**TODO**: Discuss the bounds-checking versions added
 in Annex K of the 2011 ISO C standard).
 
 It's because `strncpy()`'s name implies something that it isn't that
@@ -140,6 +140,12 @@ it's such a trap for the unwary. It's not a useless function, but I
 see far more incorrect uses of it than correct uses.  This article
 is my modest attempt to spread the word that `strncpy()` isn't what
 you probably think it is.
+
+A better-behaved alternative that behaves the way one might *expect*
+`strncpy() to work is:
+
+    dest[0] = '\0';
+    strncat(dest, src, size);
 
 I've put together a
 [small demo](https://github.com/Keith-S-Thompson/strncpy_demo)
