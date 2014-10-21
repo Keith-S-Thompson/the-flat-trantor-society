@@ -228,16 +228,16 @@ wording of the current definition, perhaps as a footnote.
 
 Paragraph 3:
 
-    An integer constant expression with the value 0, or such an
-    expression cast to type **`void *`**, is called a *null pointer
-    constant*.
+> An integer constant expression with the value 0, or such an
+> expression cast to type **`void *`**, is called a *null pointer
+> constant*.
 
 The problem: 6.5.1 (Primary expressions) says that a parenthesized
 expression
 
-    is an lvalue, a function designator, or a void expression if
-    the unparenthesized expression is, respectively, an lvalue,
-    a function designator, or a void expression.
+> is an lvalue, a function designator, or a void expression if
+> the unparenthesized expression is, respectively, an lvalue,
+> a function designator, or a void expression.
 
 It *doesn't* say that a parenthesized null pointer constant is a null
 pointer constant.
@@ -247,10 +247,10 @@ but `((void*)0)` is not.
 
 And since 7.1.2 "Standard headers" requires:
 
-    Any definition of an object-like macro described in this clause shall
-    expand to code that is fully protected by parentheses where necessary,
-    so that it groups in an arbitrary expression as if it were a single
-    identifier.
+> Any definition of an object-like macro described in this clause shall
+> expand to code that is fully protected by parentheses where necessary,
+> so that it groups in an arbitrary expression as if it were a single
+> identifier.
 
 this implies that the `NULL` macro may not be defined as `(void*)0`,
 since, for example, that would cause `sizeof NULL` to be a syntax
@@ -258,7 +258,32 @@ error.
 
 I'm sure that most C implementations do treat a parenthesized null
 pointer constant as a null pointer constant, and define `NULL` either
-as `0`, `((void*)0)`, or in some other manner.
+as `0`, as `((void*)0)`, or in some other manner.
+
+Even if `((void*)0)` were not a null pointer constant, it would
+still be an expression of type `void*` whose value is a null pointer,
+and it would still be an *address constant*.
+So what difference does it make?  [This
+question](http://stackoverflow.com/q/26477209/827263) on [Stack
+Overflow](http://stackoverflow.com/) asks about this issue (and
+confirms that someone actually reads this blog!).
+
+
+While composing [my
+answer](http://stackoverflow.com/a/26477262/827263), I found (with
+help from commenters) several cases where it actually matters:
+
+- An expression of pointer-to-function type may be compared (`==` or `!=`)
+  to a null pointer constant.  It may not be compared to an arbitrary
+  expression of type `void*`.
+- Similarly, a null pointer constant may be assigned to an object
+  of pointer-to-function type, but an arbitrary expression  of type
+  `void*` may not; there is no implicit conversion from `void*`
+  to a pointer-to-function type.  The same constraints apply to
+  initialization and function argument passing.
+- As I mentioned above, the macro `NULL` must expand to a null
+  pointer constant.  This is a constraint on implementations, not
+  on programmers.
 
 ### What is an expression?
 
