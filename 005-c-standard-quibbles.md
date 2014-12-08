@@ -136,8 +136,8 @@ pointer value.  An "l-value" was the *identity* of an object, not its
 address.  (Evaluating an expression for its l-value might well involve
 computing an address internally.)
 
-I've tried and failed to find a reference for these definitions,
-but a footnote in section 6.3.2.1 of the C standard:
+I've tried <strike>and failed</strike> to find a reference for these
+definitions, but a footnote in section 6.3.2.1 of the C standard:
 
     The name "lvalue" comes originally from the assignment expression
     **`E1 = E2`**, in which the left operand **`E1`** is required
@@ -150,6 +150,28 @@ at least strongly suggests that an *rvalue* is a value, not an
 expression that yields a value -- though an lvalue is a kind of
 expression.  The term "rvalue" does not appear anywhere else in the
 C standard.
+
+**UPDATE :** I've found a reference.
+[Wikipedia](http://en.wikipedia.org/wiki/Value_(computer_science)#lrvalue)
+says that "The notion of l-values and r-values was introduced
+by CPL".  CPL was the ancestor of BCPL, which was the ancestor
+of B, which was the ancestor of C.  I haven't found an actual
+CPL manual (it's not clear that one exists), but the [BCPL
+manual](http://cm.bell-labs.com/cm/cs/who/dmr/bcpl.pdf) says:
+
+> An RVALUE is a binary bit pattern of a fixed length (which is
+> implementation dependent), it is usually the size of a computer word.
+
+and
+
+> An LVALUE is a bit pattern representing a storage location containing
+> an Rvalue.
+
+This differs from C's description of values in that it refers to bit
+patterns, and the definition of "lvalue" seems to match C's idea of
+(the representation of) the *address* of an object.  Still, it shows
+that lvalue and rvalues were originally kinds of *values*, while in
+modern C an lvalue is a kind of *expression*.
 
 But that's all pre-C history.
 
