@@ -59,7 +59,7 @@ those ways vary considerably from one operating system to another.
   and [this answer](http://unix.stackexchange.com/questions/114022/map-caps-lock-to-control-in-linux-mint/114023#114023)
   on [unix.stackexchange.com](http://unix.stackexchange.com).
 
-  **UNIX-like command-line solutions:
+  **UNIX-like command-line solutions:**
 
   Either of the following commands should work to map Caps Lock to
   Control (making both keys act like a Control key) for the duration
@@ -127,6 +127,7 @@ those ways vary considerably from one operating system to another.
     - Enable and select "Caps lock as Ctrl" or "Swap Ctrl and Caps Lock"
 
   **Linux Mint 17, Xfce desktop**:
+
   Oddly, the Xfce settings GUI doesn't seem to have an option to change
   the behavior of the Caps Lock key.  See "**UNIX-like command-line
   solutions**" above.
@@ -134,6 +135,7 @@ those ways vary considerably from one operating system to another.
   Modifying `/etc/default/keyboard` will affect all users on the system.
 
   **Linux virtual console**:
+
   [This web page](http://www.emacswiki.org/emacs/MovingTheCtrlKey#toc7)
   discusses various ways to remap the control key in the Linux
   virtual console.  (This is the text-only console reachable by typing
