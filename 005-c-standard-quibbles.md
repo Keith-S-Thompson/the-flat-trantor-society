@@ -108,6 +108,13 @@ if non-prototype declarations are useful other than for backward
 compatibility).  If `int main()` is invalid, then *no* pre-ANSI program
 is a valid C90, C99, or C11 program, which was surely not the intent.
 
+I've posted a question about this on
+[Stack Overflow](https://stackoverflow.com):
+[http://stackoverflow.com/q/29190986/827263]
+("Is int main() { } (without “void”) valid and portable in ISO C?").
+I've posted [an answer](http://stackoverflow.com/a/29190987/827263), but
+the other answers raise some interesting points.
+
 ### What is an lvalue?
 
 ##### ISO C 6.2.2.1p1 Lvalues, arrays, and function designators
