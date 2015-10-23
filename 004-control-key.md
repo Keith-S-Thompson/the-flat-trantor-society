@@ -155,3 +155,6 @@ those ways vary considerably from one operating system to another.
     - Keyboard tab > Modifier Keys ...
     - Change Caps Lock to act as Control
     - Optional: Change Control to act as Caps Lock
+
+ This article: [http://jilles.me/tmux-for-developers/](http://jilles.me/tmux-for-developers/)
+ discusses remapping the caps lock key on Mac OS X.
