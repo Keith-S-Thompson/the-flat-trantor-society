@@ -147,7 +147,7 @@ those ways vary considerably from one operating system to another.
   Replace `nocaps` by `swapcaps` if you prefer to swap Control and
   Caps-Lock rather than making both keys act like Control keys.
 
-  I've tried this on Debian 6, and it works after a reboot.
+  I've tried this on Debian 6 and Ubuntu 14.03.3 LTS, and it works after a reboot.
 
 - **Mac OS X 10.5.8**:
     - System Preferences
