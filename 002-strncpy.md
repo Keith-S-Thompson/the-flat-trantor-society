@@ -150,3 +150,24 @@ A better-behaved alternative that behaves the way one might *expect*
 I've put together a
 [small demo](https://github.com/Keith-S-Thompson/strncpy_demo)
 as a GitHub project.
+
+<!--
+TODO: Cite Dan Cross's comp.lang.c post.
+
+    https://groups.google.com/forum/#!original/comp.lang.c/ix_pbNqmUWw/S18bs3EeAQAJ
+
+    From: cross@spitfire.i.gajendra.net (Dan Cross)
+    Newsgroups: comp.lang.c
+    Subject: Re: How to copy a string safely and efficiently in C?
+    Date: Thu, 15 Sep 2016 14:03:18 +0000 (UTC)
+    Message-ID: <nre9n6$t7b$1@reader2.panix.com>
+
+    But yeah, it could just return a boolean indicating whether it
+    successfully copied the entirety of the source string.  Indeed,
+    this is what the original version in the Akaros kernel did before
+    I rewrote it.
+
+    Incidentally: I went on a search for strncpy() in that kernel at
+    one point; out of something like 80ish call sites, only 4 were
+    correct.
+-->
