@@ -171,3 +171,15 @@ TODO: Cite Dan Cross's comp.lang.c post.
     one point; out of something like 80ish call sites, only 4 were
     correct.
 -->
+
+<!--
+TODO: Discuss what *should* be done if the target array isn't big
+enough.  It's commonly assumed that quiet truncation is the right
+choice -- and perhaps sometimes it is, but you should *always* think
+about what should actually happen.  Consider trying to copy the string
+    "rm -rf /home/username/temporary-directory"
+into an array that's only long enough to hold
+    "rm -rf /home/username/"
+You'd be better off crashing with a core dump than passing the
+truncated string to system().
+-->
