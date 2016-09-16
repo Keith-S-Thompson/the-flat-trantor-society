@@ -173,6 +173,21 @@ TODO: Cite Dan Cross's comp.lang.c post.
 -->
 
 <!--
+TODO: Cite Tim Rentsch's Cross's comp.lang.c post.
+
+    From: Tim Rentsch <txr@alumni.caltech.edu>
+    Newsgroups: comp.lang.c
+    Subject: Re: How to copy a string safely and efficiently in C?
+    Date: Fri, 16 Sep 2016 06:17:18 -0700
+    Message-ID: <kfnbmzogf1d.fsf@x-alumni2.alumni.caltech.edu>
+
+    All of these (mine included) are stylistically at odds with other
+    standard library functions.  In light of that I withdraw my
+    previous strawman and offer strnwtf() as a possible replacement
+    (the last part being short for "write truncated field").
+-->
+
+<!--
 TODO: Discuss what *should* be done if the target array isn't big
 enough.  It's commonly assumed that quiet truncation is the right
 choice -- and perhaps sometimes it is, but you should *always* think
