@@ -197,4 +197,20 @@ into an array that's only long enough to hold
     "rm -rf /home/username/"
 You'd be better off crashing with a core dump than passing the
 truncated string to system().
+
+Actually this should be a new post.  Tentative title:
+"Error handling is much harder than error detection"
+-->
+
+<!--
+TODO: Cite the C99 Rationale:
+    **`strncpy`** was initially introduced into the C library to deal
+    with fixed-length name fields in structures such as directory
+    entries. Such fields are not used in the same way as strings:
+    the trailing null is unnecessary for a maximum-length field,
+    and setting trailing bytes for shorter names to null assures
+    efficient field-wise comparisons. **`strncpy`** is not by origin a
+    “bounded strcpy,” and the Committee preferred to recognize
+    existing practice rather than alter the function to better suit
+    it to such use.
 -->
