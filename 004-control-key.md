@@ -74,10 +74,9 @@ those ways vary considerably from one operating system to another.
   still enables caps lock when pressing the remapped
   key. #17982](https://github.com/microsoft/PowerToys/issues/17982)
 
-  Due to these issues, I suggest mapping *some* key to Caps Lock,
-  so it can be turned off.  I've mapped the right Control key, which
-  I don't otherwise use -- but I sometimes hit it accidentally.
-  I'll update this when/if I come up with a more robust solution.
+  Due to these issues, I suggest mapping *some* key to Caps Lock, so
+  it can be turned off when needed.  I've used the "Remap a shortcut"
+  feature (distinct from "Remap a key") to map Alt-. to Caps Lock.
 
 - **Linux** (or GNU/Linux if you prefer):
 
