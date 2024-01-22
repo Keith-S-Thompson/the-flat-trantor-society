@@ -32,7 +32,7 @@ those ways vary considerably from one operating system to another.
 
 <!-- more -->
 
-- **Microsoft Windows**:
+- **Microsoft Windows 7 through 10**:
 
   Microsoft Windows does let you do some limited keyboard remapping
   through the Control Panel (in Windows 7 at least, it's under "Region
@@ -48,8 +48,36 @@ those ways vary considerably from one operating system to another.
   this registry patch to a shared Windows system unless you're sure that
   all users of the system are ok with a "non-standard" keyboard layout.
 
-  UPDATE: Windows PowerToys appears to be able to remap keys.
-  I haven't yet verified whether it can map caps-lock to control.
+  The Windows PowerToys Keyboard Manager is another option.  See below.
+
+- **Microsoft Windows 11**:
+
+  Windows 11 does not have the same registry key mentioned above for
+  Windows 10 and lower.
+
+  I have a laptop that originally had Windows 10 installed, and I had
+  applied the above registry hack.  When I later upgraded the system to
+  Windows 11, it continued to work, but I don't know how.  When I got
+  a Windows 11 laptop for work, I was unable to apply the same hack.
+
+  A solution that *mostly* works on Windows 11 (and probably on
+  Windows 10 as well) is to use the Windows PowerToys Keyboard Manager.
+  Its "Remap Keys" feature is fairly straightfoward, and can be used to
+  swap the Control and Caps Lock keys or to make both act like Control.
+
+  I've found that this mapping, unlike the registry hack, does not
+  apply in all contexts.  In particular, it's not active on the
+  login screen.
+
+  There's also a possible issue where caps lock can still be engaged:  
+  [Remapping caps lock with Keyboard Manager occasionally
+  still enables caps lock when pressing the remapped
+  key. #17982](https://github.com/microsoft/PowerToys/issues/17982)
+
+  Due to these issues, I suggest mapping *some* key to Caps Lock,
+  so it can be turned off.  I've mapped the right Control key, which
+  I don't otherwise use -- but I sometimes hit it accidentally.
+  I'll update this when/if I come up with a more robust solution.
 
 - **Linux** (or GNU/Linux if you prefer):
 
@@ -167,5 +195,5 @@ those ways vary considerably from one operating system to another.
     - Change Caps Lock to act as Control
     - Optional: Change Control to act as Caps Lock
 
- This article: [http://jilles.me/tmux-for-developers/](http://jilles.me/tmux-for-developers/)
- discusses remapping the caps lock key on Mac OS X.
+  This article: [http://jilles.me/tmux-for-developers/](http://jilles.me/tmux-for-developers/)
+  discusses remapping the caps lock key on Mac OS X.
