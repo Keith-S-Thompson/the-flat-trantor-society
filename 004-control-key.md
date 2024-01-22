@@ -48,6 +48,9 @@ those ways vary considerably from one operating system to another.
   this registry patch to a shared Windows system unless you're sure that
   all users of the system are ok with a "non-standard" keyboard layout.
 
+  UPDATE: Windows PowerToys appears to be able to remap keys.
+  I haven't yet verified whether it can map caps-lock to control.
+
 - **Linux** (or GNU/Linux if you prefer):
 
   Fortunately, Linux-based systems generally *do* let you modify
@@ -133,6 +136,14 @@ those ways vary considerably from one operating system to another.
   solutions**" above.
 
   Modifying `/etc/default/keyboard` will affect all users on the system.
+
+  **Ubuntu 19.04, Cinnamon desktop**:
+    - From the main menu, select "System Settings"
+    - Search for "keyboard"
+    - Select the "Layouts" tab
+    - Select "Options..."
+    - Open "Ctrl position"
+    - Enable and select "Caps lock as Ctrl" or "Swap Ctrl and Caps Lock"
 
   **Linux virtual console**:
 
