@@ -52,13 +52,19 @@ those ways vary considerably from one operating system to another.
 
 - **Microsoft Windows 11**:
 
+  (See the bottom of this section for the best solution I've found
+  so far, the 
+  [Ctrl2Cap](https://learn.microsoft.com/en-us/sysinternals/downloads/ctrl2cap)
+  tool.)
+
   Windows 11 does not have the same registry key mentioned above for
   Windows 10 and lower.
 
-  I have a laptop that originally had Windows 10 installed, and I had
-  applied the above registry hack.  When I later upgraded the system to
-  Windows 11, it continued to work, but I don't know how.  When I got
-  a Windows 11 laptop for work, I was unable to apply the same hack.
+  I have a laptop that originally had Windows 10 installed, and I
+  had applied the above registry hack.  When I later upgraded the
+  system to Windows 11, it continued to work, but I don't know how.
+  I've since had laptops with Windows 11 pre-installed, and I've been
+  unable to apply the same hack.
 
   A solution that *mostly* works on Windows 11 (and probably on
   Windows 10 as well) is to use the Windows PowerToys Keyboard Manager.
@@ -77,6 +83,37 @@ those ways vary considerably from one operating system to another.
   Due to these issues, I suggest mapping *some* key to Caps Lock, so
   it can be turned off when needed.  I've used the "Remap a shortcut"
   feature (distinct from "Remap a key") to map Alt-. to Caps Lock.
+
+  But there's a better solution (that I just learned
+  about today, Thu 2025-08-28).  A while ago, I posted
+  [this question](https://superuser.com/q/1826899/92954)
+  on [superuser.com](https://superuser.com/).  User
+  [Yoni](https://superuser.com/users/23067/yoni) on
+  [superuser.com](https://superuser.com/) posted [this
+  answer](https://superuser.com/a/1921930/92954).
+
+  To summarize, you can install
+  [Ctrl2Cap](https://learn.microsoft.com/en-us/sysinternals/downloads/ctrl2cap),
+  a Sysinternals tool provided by Microsoft.
+
+  To use:
+
+  - Download [https://download.sysinternals.com/files/Ctrl2Cap.zip](Ctrl2Cap.zip).
+  - Unzip (it contains `ctrl2cap.exe` and `Eula.txt`).
+  - To enable, run `ctrl2cap.exe /install` *as Administrator*.
+  - To disable, run `ctrl2cap.exe /uninstall` *as Administrator*.
+  - Restart Windows.
+
+  The Control key still acts as the Control key, and Caps Lock acts
+  as an additional Control key.  (I don't see a way to swap them.)
+
+  Unlike the PowerToys solution, this applies in all contexts,
+  including the login screen and programs running as Administrator.
+
+  Apparently it runs on Windows 10 or higher.
+
+  I think it's updating the registry key
+  `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Keyboard Layout`.
 
 - **Linux** (or GNU/Linux if you prefer):
 
