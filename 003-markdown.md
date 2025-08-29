@@ -33,7 +33,9 @@ Markdown is converted to HTML by the
 command, which is also available as a .deb package on Debian and
 Debian-derived systems such as Ubuntu and Linux Mint:
 
-    sudo apt-get install markdown
+```
+sudo apt-get install markdown
+```
 
 It should be available for other systems as well.  I run a simple
 `gen-html` script (included in the GitHub project for this blog), and

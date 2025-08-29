@@ -142,10 +142,12 @@ is my modest attempt to spread the word that `strncpy()` isn't what
 you probably think it is.
 
 A better-behaved alternative that behaves the way one might *expect*
-`strncpy() to work is:
+`strncpy()` to work is:
 
-    dest[0] = '\0';
-    strncat(dest, src, size);
+```
+dest[0] = '\0';
+strncat(dest, src, size);
+```
 
 I've put together a
 [small demo](https://github.com/Keith-S-Thompson/strncpy_demo)
@@ -213,4 +215,8 @@ TODO: Cite the C99 Rationale:
     “bounded strcpy,” and the Committee preferred to recognize
     existing practice rather than alter the function to better suit
     it to such use.
+-->
+
+<!--
+TODO: Discuss the meaning of the size parameter of `strncat()`
 -->

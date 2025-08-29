@@ -97,7 +97,7 @@ those ways vary considerably from one operating system to another.
 
     xmodmap -e 'clear Lock' \
             -e 'keycode 0x42 = Control_L' \
-            -e 'add Control = Control_L' 
+            -e 'add Control = Control_L'
 
   or:
 
